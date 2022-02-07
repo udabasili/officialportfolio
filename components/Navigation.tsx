@@ -6,12 +6,20 @@ import { useRouter } from 'next/router';
 import { FaUserCircle, FaRegUserCircle  } from 'react-icons/fa';
 import { BsBriefcaseFill, BsBriefcase  } from 'react-icons/bs';
 import { MdMarkEmailUnread, MdOutlineEmail  } from 'react-icons/md';
-
+import { saveAs } from "file-saver";
 import Button from './Elements/Button';
 
 function Navigation(props) {
 	const router = useRouter();
 	const [isMobile, setIsMobile] = useState(true);
+
+	const saveFile = () => {
+		
+		saveAs(
+		  "/programmingresume_wordpress.pdf",
+		  "portfolio.pdf"
+		);
+	  };
 
 	const resizeHandler = () => {
 		if (window.innerWidth <= 900) {
@@ -111,7 +119,10 @@ function Navigation(props) {
 						</a>
 					</Link>
 				</li>
-					<Button size="lg" variant="primary">
+					<Button 
+						size="lg" 
+						onClick={saveFile}
+						variant="primary">
 						Download CV
 					</Button>
 				
