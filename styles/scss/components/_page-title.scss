@@ -1,0 +1,13 @@
+.page-title{
+    width: 100%;
+    background-color: $color-primary;
+    padding: 8vh 0;
+    position: relative;
+    grid-column: full-start / full-end;
+
+    &__header {
+        color: #fff;
+
+        
+    }
+}

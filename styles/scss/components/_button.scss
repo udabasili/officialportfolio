@@ -1,0 +1,37 @@
+.button{
+
+    color: white;
+    font-family: quicksand;
+    align-self: center;
+    border-radius: 10px;
+    display: inline-block;
+
+    &.sm{
+        padding: 2px 26px;
+        font-size: 1.2rem;
+
+    }
+
+    &.md{
+        padding: 4px 28px;
+        font-size: 1.4rem;
+
+    }
+    &.lg{
+        padding: 6px 30px;
+        font-size: 1.7rem;
+
+    }
+
+    &--primary{
+        background-color: $color-primary;
+    }
+
+    &--danger{
+        background-color: red;
+    }
+
+    &--inverse{
+        background-color: gray;
+    }
+}

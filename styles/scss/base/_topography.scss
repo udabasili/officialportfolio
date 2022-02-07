@@ -1,0 +1,43 @@
+.heading-1 {
+    display: block;
+    font-size: 12rem;
+    font-weight: bolder;
+    letter-spacing: 1.2;
+    font-family: $bangers;
+    text-transform: uppercase;
+    color: $color-primary;
+
+    @include responsive(tab-port){
+        font-size: 7rem;
+    }
+}
+
+.heading-2 {
+    display: block;
+    font-size: 8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-weight: bolder;
+    font-family: $bangers;
+
+    @include responsive(tab-port){
+        font-size: 5rem;
+    }
+}
+
+.heading-3 {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: $quicksand;
+    letter-spacing: 1.2;
+    text-transform: capitalize;
+    @include responsive(tab-port){
+        font-size: 2rem;
+    }
+
+}
+
+.paragraph {
+    font-size: 1.6rem;
+}
