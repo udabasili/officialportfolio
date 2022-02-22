@@ -11,7 +11,7 @@ import {
 } from 'formik';
 import { ContactSchema } from '../lib/schema';
 import Button from '../components/Elements/Button';
-console.log(process.env.NEXT_PUBLIC_EMAILJS_UID)
+
 init(process.env.NEXT_PUBLIC_EMAILJS_UID);
 interface MyFormValues {
   name: string

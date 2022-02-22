@@ -20,7 +20,6 @@ export const getStaticProps = async () => {
       };
     })
   ).then((values) => values);
-  console.log(images)
 
   return {
     props: {
