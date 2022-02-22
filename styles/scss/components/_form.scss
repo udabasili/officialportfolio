@@ -1,6 +1,8 @@
 .form{
     width: 80%;
     margin: 3rem auto;
+    flex-direction: column;
+    display: flex;
 
     @include responsive(phone){
         width: 80%;
@@ -19,18 +21,22 @@
         width: 100%;
         background-color: white;
         position: relative;
-        margin: 2rem 0;
+        display: grid;
+        margin: .4rem 0;
         border: 1px solid black;
-        height: 6rem;
+        grid-column: 1;
         border-radius: 4px;
 
         &--text-area{
             width: 100%;
             background-color: white;
             position: relative;
-            margin: 2rem 0;
+            grid-template-rows: min-content 1fr min-content;
+            display: grid;
+            margin: .4rem 0;
             border: 1px solid black;
             height: 20rem;
+            margin-bottom: 5rem;
             border-radius: 4px;
         }
 
@@ -38,39 +44,41 @@
 
     &__input{
         border: none;
-        height: 100%;
-        width: 100%;
         font-size: 1.5rem;
-        padding: 2rem;
-        padding-bottom: 0;
+        padding: 1rem 2rem;
+        font-family: "Quicksand", sans-serif;
         outline: none;
         background-color: transparent;
 
-        &:invalid{
-            color: red;
-        }
     }
 
-    &__text-area{
+    &__text-area {
         border: none;
-        height: 100%;
-        width: 100%;
+        font-family: "Quicksand", sans-serif;
         font-size: 1.5rem;
-        padding: 3rem;
-        padding-bottom: 0;
+        padding: 1rem 0;
+        padding-left: 1rem;
         outline: none;
         background-color: transparent;
     }
+
     &__label{
-        position: absolute;
-        left: 2%;
-        top: 4%;
-        font-size: 1.5rem;
+        grid-row: 1;
+        font-size: 1.2rem;
+        margin-left: 1rem;
+        justify-self: flex-start;
+    }
+    .error {
+        color: red;
+        margin-left: 1rem;
+        justify-self: flex-start;
+        font-weight: bold;
+        padding-bottom: .3rem;
     }
 }
 
 .form__input:focus ~ .form__label{
-    font-size: 1rem;
+    font-size: .6rem;
 }
 
 .form__text-area:focus~.form__label {

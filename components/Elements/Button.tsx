@@ -15,6 +15,7 @@ const sizes = {
 interface IProps {
     size: keyof typeof sizes;
     variant: keyof typeof variants;
+    isLoading?: boolean
     [x: string]: any
 
 }
@@ -22,6 +23,7 @@ const  Button:FC<IProps> = ({
     children,
     size,
     variant,
+    isLoading,
     ...props
 }) => {
   return(
@@ -31,9 +33,16 @@ const  Button:FC<IProps> = ({
         button
         ${size}
         button--${variant}
+        ${isLoading ? 'disabled' : ''}
         `} 
-    >
-        {children}
+    > 
+      {
+        isLoading ?
+        <div className="loader"></div> :
+        null
+      }
+       <div className="content"> {children}</div> 
+        
     </div>
   )
 }

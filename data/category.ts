@@ -9,6 +9,11 @@ export const category = [
         "category": "Social Media"
        
     },
+    {
+        "Project name": "Pixel Shop",
+        "category": "Image Editing and Manipulation"
+       
+    },
      {
          "Project name": "Cyber Groceries",
          "category": "e-Commerce"

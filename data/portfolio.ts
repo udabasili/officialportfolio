@@ -32,23 +32,23 @@ export const websitePortfolioData = [{
       ]
 
     },
-  //   {
-  //    index: 3,
-  //    name: 'Pixel Shop',
-  //    description: 'Pixel Shop is a photo editing application mostly built with Python libraries such as CV2, PIL Front built with Jinja is a web template engine. Features includes Rotate, Crop Image, Image Effects etc ',
-  //    logo: require('../public/images/Website/PixelShop/image-editing.png'),
-  //    image: 'https://user-images.githubusercontent.com/33573587/110267661-aa111400-7f96-11eb-9877-0200d6c88777.png',
-  //    category: 'Photo editor online app',
-  //    programs: 'Flask, Jinja2, Python, Docker',
-  //    github: "https://github.com/udabasili/pixelshop",
-  //    link: 'https://pixelshop-v6jry.ondigitalocean.app/',
-  //    images: [
-  //      'https://user-images.githubusercontent.com/33573587/110267663-aaa9aa80-7f96-11eb-888f-eacbd0be524f.png',
-  //      "https://user-images.githubusercontent.com/33573587/110267661-aa111400-7f96-11eb-9877-0200d6c88777.png",
-  //      "https://user-images.githubusercontent.com/33573587/110267664-ab424100-7f96-11eb-8018-a798370a96c3.png"
-  //    ]
+    {
+     index: 3,
+     name: 'Pixel Shop',
+     description: 'Pixel Shop is a photo editing application mostly built with Python libraries such as CV2, PIL Front built with Jinja is a web template engine. Features includes Rotate, Crop Image, Image Effects etc ',
+     logo: require('../public/images/Website/PixelShop/image-editing.png'),
+     image: 'https://user-images.githubusercontent.com/33573587/110267661-aa111400-7f96-11eb-9877-0200d6c88777.png',
+     category: 'Photo editor online app',
+     programs: 'Flask, Jinja2, Python, Docker',
+     github: "https://github.com/udabasili/pixelshop",
+     link: 'https://pixelshop-v6jry.ondigitalocean.app/',
+     images: [
+       'https://user-images.githubusercontent.com/33573587/110267663-aaa9aa80-7f96-11eb-888f-eacbd0be524f.png',
+       "https://user-images.githubusercontent.com/33573587/110267661-aa111400-7f96-11eb-9877-0200d6c88777.png",
+       "https://user-images.githubusercontent.com/33573587/110267664-ab424100-7f96-11eb-8018-a798370a96c3.png"
+     ]
 
-  //  },
+   },
  
   {
     index: 4,

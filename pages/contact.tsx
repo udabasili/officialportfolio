@@ -5,54 +5,32 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaMailBulk, FaGithubSquare, FaFacebook } from 'react-icons/fa';
 import PageHead from '../components/PageHead';
 import { Audio } from  'react-loader-spinner'
-import emailjs from '@emailjs/browser';
+import emailjs, { EmailJSResponseStatus, init } from '@emailjs/browser';
 import {
   Formik,
-  FormikHelpers,
-  FormikProps,
-  Form,
-  Field,
-  FieldProps,
 } from 'formik';
 import { ContactSchema } from '../lib/schema';
 import Button from '../components/Elements/Button';
-
-ContactSchema
+console.log(process.env.NEXT_PUBLIC_EMAILJS_UID)
+init(process.env.NEXT_PUBLIC_EMAILJS_UID);
 interface MyFormValues {
   name: string
   email: string
   description: string
 }
 
+const initialValues: MyFormValues = { 
+  email: '',
+  name: '',
+  description: '',
+};
+
 function Contact() {
-  const [description, setDescription] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const initialValues: MyFormValues = { 
-                              email: '',
-                              name: '',
-                              description: '',
-                            };
-
-
-  const  handleSubmit = (event) => {
-   
-}
-
+  const [isLoading, setLoading] = useState(false);
 
   return (
     <Layout title="Contact">
-       <ToastContainer
-          position="top-center"
-          autoClose={2000}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
+       
       <PageHead title="Contact"/>
       <div className="contact-page"> 
       <section className="contact">   
@@ -78,14 +56,14 @@ function Contact() {
 							<span className='desc'>https://www.facebook.com/acumendev</span>
 						</div>
 					</li>
-              	</ul>   
+        </ul>   
 			  	<div className='container'>
-					<form className="form" onSubmit={handleSubmit}>
+          <div className="form">
           <Formik
               initialValues={initialValues}
               validationSchema={ContactSchema}
-
-              onSubmit={(values, actions) => {
+              onSubmit={async (values, actions) => {
+                setLoading(true)
                 const {
                   name,
                   email, 
@@ -95,45 +73,37 @@ function Contact() {
                   "userName": name,
                   "userEmail": email,
                   "description": description,
-              }
-              
-              const option = {
-                  position: "top-center" as ToastPosition,
-                  autoClose: 2000,
-                  hideProgressBar: true,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-              };
-              event.preventDefault()
-              emailjs.send(
-                  process.env.REACT_APP_EMAILJS_SERVICE_ID, 
-                  process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
-                  template_params,
-                  process.env.REACT_APP_EMAILJS_UID)
-                .then((result) => {
-                  if(result.status === 200){
-                    toast.success("Email sent successfully", option)
-                    setEmail('')
-                    setName('')
-                    setDescription('')
+                }
+
+                try {
+                  const response = await emailjs.send(
+                      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, 
+                      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, 
+                      template_params,
+                      process.env.NEXT_PUBLIC_EMAILJS_UID)
+                  if(response.status === 200){
+                    toast.success("Email sent successfully")
                   }
+                  setLoading(false)
+
+                } catch (error) {
+
+                  setLoading(false)
+                  console.log(error)
+                  toast.error((error as any))
+                
+                }
           
-              }).catch((err) => {
-            console.log(err)
-                  toast.warning('Something went wrong. Please try again later', option)
-              });
-                actions.setSubmitting(false);
               }}
             >
-            {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+            {({ handleChange, handleBlur, handleSubmit, values, errors , touched}) => (
               <><h2 className="header-secondary">General Enquiry</h2><div className="form__control">
                     <input
                       type="text"
                       id="name"
                       name="name"
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       autoComplete="false"
                       value={values.name}
 
@@ -142,7 +112,7 @@ function Contact() {
                     <label htmlFor="name" className="form__label">
                       Name
                     </label>
-                    {errors.name ? <div>{errors.name}</div> : null}
+                    {errors.name && touched.name ? <div className='error'>{errors.name}</div> : null}
 
                   </div><div className="form__control">
                       <input
@@ -150,13 +120,14 @@ function Contact() {
                         className="form__input"
                         onChange={handleChange}
                         value={values.email}
+                        onBlur={handleBlur}
                         id="email"
                         autoComplete="false"
                         name="email" />
                       <label htmlFor="email" className="form__label">
                         Email
                       </label>
-                      {errors.email ? <div>{errors.email}</div> : null}
+                      {(errors.email && touched.email) ? <div className='error'>{errors.email}</div> : null}
                     </div>
                     <div className="form__control--text-area">
                       <textarea
@@ -164,26 +135,27 @@ function Contact() {
                         value={values.description}
                         name="description"
                         id="description"
+                        onBlur={handleBlur}
                         onChange={handleChange}
                         required />
                       <label htmlFor="description" className="form__label">
                         What would you like to know?
                       </label>
-                      {errors.description ? <div>{errors.description}</div> : null}
+                      {errors.description && touched.description ? <div className='error'>{errors.description}</div> : null}
 
                     </div>
                     <Button 
-                      size="md"
+                      size="lg"
                       onClick={handleSubmit as (e: any) => void} 
+                      isLoading={isLoading}
                       variant={'primary'}>
                       Submit
                     </Button>
                 </>
             )}
           </Formik>
-            
-						</form>
-						<div>
+        </div>
+          <div>
 							<h2 className="header-secondary">Questionnaire for your project</h2>
 							<iframe 
 								src="https://docs.google.com/forms/d/e/1FAIpQLSfUBiIZ31zj1PK_rCbUouK2IG2yDMp_9fkTFtQbGUF7Lcip5w/viewform?embedded=true" 
@@ -192,7 +164,6 @@ function Contact() {
 								title='questionnaire'
 								frameBorder="0" 
 							    >
-									<Audio/>
 								</iframe>
                 </div>
             </div>        

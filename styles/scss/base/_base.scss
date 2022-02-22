@@ -37,3 +37,8 @@ main , #__next  {
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-start]) [center-end] minmax(4rem, 1fr) [side-content-start] 6rem [side-content-end full-end];
     background-color: $color-background;
 }
+
+.Toastify__toast-body {
+    font-size: 3rem;
+}
+

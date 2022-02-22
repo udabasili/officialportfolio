@@ -42,9 +42,13 @@ const PortfolioDetail = () => {
                         <MainImage
                             images={eachItem["Screenshots or animated GIFs"]}
                         />
-                        <Authentication 
-                            data={eachItem["Sample Login Details"]}
-                        />
+                        {
+                            eachItem["Sample Login Details"] &&
+                                <Authentication 
+                                    data={eachItem["Sample Login Details"]}
+                                />
+                        }
+                        
                         <Goal
                             text={eachItem["Project Purpose and Goal"]}
                         />
