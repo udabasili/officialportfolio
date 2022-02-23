@@ -5,13 +5,12 @@ export const portfolioDetails = [{
         "Lesson Learned": "This project solidified my React knowledge in relation to handling state management and updating props adequately,  using Context API  to manage global application states, and most importantly making HTML manipulation as user-friendly as possible. I spend a good amount of time making sure I have followed the best practices of state management and data manipulation",
         "Tech Stack": "React, SCSS, Firebase, Context API",
         "How to Run": "You can visit the website",
-        "Sample Login Details": "Email: john@yahoo.com, password: 111111",
         "Project Purpose and Goal": "I have always been interested in creating a website builder that would be simple and easy to use. I would keep updating this project to add more customizable options for the users and add more website categories",
         "Web Stack and Explanation": "For this project, I used React because of its ease of use and the ability to smoothly manipulate states without needing to re-render the components each time.  I made use of Context API  to manage global application states and Firebase for storage and authentication due to the ease with which they could be used with React.",
         "Problems and Thought Process": "The main issue that I encountered was how to make elements in the templates editable, and how to download certain components of my app as HTML with the CSS and JavaScript attached. This required complex state management to display the proper HTML and CSS when exporting. I also had to design the templates would be customized as Single page apps to make them easy to use and customize",
         "Project Link": "https://web-craftmaster.netlify.app",
         "GitHub Link": "https://github.com/udabasili/web-craftmaster",
-        "Screenshots or animated GIFs": "https://user-images.githubusercontent.com/33573587/123635362-fa380e80-d7f1-11eb-9a9f-86319fd42e33.png,https://user-images.githubusercontent.com/33573587/123635358-f99f7800-d7f1-11eb-9b0e-43e7d60c3ddf.png,https://user-images.githubusercontent.com/33573587/123635355-f906e180-d7f1-11eb-9a4b-20043161fbc0.png"
+        "Screenshots or animated GIFs": "https://user-images.githubusercontent.com/33573587/123635358-f99f7800-d7f1-11eb-9b0e-43e7d60c3ddf.png,https://user-images.githubusercontent.com/33573587/123635355-f906e180-d7f1-11eb-9a4b-20043161fbc0.png"
     },
     {
         "Timestamp": "29/06/2021 15:13:44",
