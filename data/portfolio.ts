@@ -52,18 +52,18 @@ export const websitePortfolioData = [{
  
   {
     index: 4,
-    name: 'Top Fashion',
+    name: 'Devine Store',
     description: 'This is a sample demo of a clothing store that I built for a client. It is a beautiful and extremely user-friendly online clothing store that presents consumers with designs, styling, and clothes that energizes any outdoor activity',
     programs: 'React/Redux, Node(Express Js), Strip API, MongoDb',
-    github: "https://github.com/udabasili/topfashion",
-    link: 'https://top-fashion.herokuapp.com/',
+    github: "https://github.com/udabasili/devine-store",
+    link: 'https://devine-store.vercel.app',
     category: 'E-Commerce',
     logo: require('../public/images/Website/Top-Fashion/top-fashion.svg'),
-    image: 'https://user-images.githubusercontent.com/33573587/106401472-a53acc80-63fa-11eb-8287-19b5ec04cdfa.png',
+    image: 'https://user-images.githubusercontent.com/33573587/158959115-4510653e-ef51-48e3-a48c-39350559c5b7.png',
     images:[
-      'https://user-images.githubusercontent.com/33573587/106401457-93f1c000-63fa-11eb-940c-ec5d316d8348.png',
-      "https://user-images.githubusercontent.com/33573587/106401472-a53acc80-63fa-11eb-8287-19b5ec04cdfa.png",
-      "https://user-images.githubusercontent.com/33573587/106401485-ba176000-63fa-11eb-9399-4f9ce60ea006.png"
+      'https://user-images.githubusercontent.com/33573587/158959267-cdf9c6a0-b8c6-4b3f-949b-12c55319034f.png',
+      "https://user-images.githubusercontent.com/33573587/158959172-a3bb75b0-a7bc-4ff0-bc3b-89904e065680.png",
+      "https://user-images.githubusercontent.com/33573587/158959267-cdf9c6a0-b8c6-4b3f-949b-12c55319034f.png"
     ]
 
   }, 

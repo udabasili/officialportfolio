@@ -5,8 +5,8 @@ export const category = [
        
     },
      {
-        "Project name": "Social Bunch",
-        "category": "Social Media"
+        "Project name": "Invoicify",
+        "category": "Project Management"
        
     },
     {
@@ -25,7 +25,7 @@ export const category = [
 
      },
      {
-         "Project name": "Top Fashion",
+         "Project name": "Devine Store",
          "category": "e-Commerce"
 
      },

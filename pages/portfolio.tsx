@@ -29,12 +29,11 @@ export const getStaticProps = async () => {
 };
 
 const imagePaths = [
-  "https://user-images.githubusercontent.com/33573587/123635362-fa380e80-d7f1-11eb-9a9f-86319fd42e33.png",
-  'https://user-images.githubusercontent.com/33573587/113302683-b4dd7100-92d6-11eb-9846-bf9d19cfd632.png',
-  'https://user-images.githubusercontent.com/33573587/104382903-5be71380-5505-11eb-99fe-17696b197499.png',
   'https://user-images.githubusercontent.com/33573587/110267661-aa111400-7f96-11eb-9877-0200d6c88777.png',
-  // "https://user-images.githubusercontent.com/33573587/107160335-fce1b680-696b-11eb-9114-744c6cca6f0f.png",
-  "https://user-images.githubusercontent.com/33573587/106401457-93f1c000-63fa-11eb-940c-ec5d316d8348.png"
+  "https://user-images.githubusercontent.com/33573587/158959267-cdf9c6a0-b8c6-4b3f-949b-12c55319034f.png",
+  'https://user-images.githubusercontent.com/33573587/159110238-ff564830-98ca-478a-bb7c-34f6df64fc98.png',
+  'https://user-images.githubusercontent.com/33573587/104382903-5be71380-5505-11eb-99fe-17696b197499.png',
+  "https://user-images.githubusercontent.com/33573587/123635362-fa380e80-d7f1-11eb-9a9f-86319fd42e33.png",
 ]
 
 
