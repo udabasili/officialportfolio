@@ -10,6 +10,13 @@
     grid-column: full-start / full-end;
     gap: 7rem;
     height: 100%;
+
+    @include responsive(tab-port){
+        grid-template-columns: unset;
+        width: unset;
+
+
+    }
 }
 
 .portfolio{
