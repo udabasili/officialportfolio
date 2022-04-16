@@ -10,6 +10,16 @@ export const category = [
        
     },
     {
+        "Project name": "Starjen International",
+        "category": "Hotel"
+
+    },
+    {
+        "Project name": "Social Bunch",
+        "category": "Social Media"
+
+    },
+    {
         "Project name": "Pixel Shop",
         "category": "Image Editing and Manipulation"
        
