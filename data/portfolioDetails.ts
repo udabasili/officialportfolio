@@ -43,7 +43,7 @@ export const portfolioDetails = [
         "Project Purpose and Goal": "The goal of this project was to build a CMRS that would be used for handling clients , projects and creating reusable invoices. This is still a project in progress so I would be integrating more features to make it more inclined to web developers. The upcoming features would be the ability to send invoices to client, improve the response time of the application, link the app with github to see code samples of the project etc",
         "Web Stack and Explanation": "React was the clear choice for this project, because of its ease of state management and the number of packages available. I made use of Firebase and Redux simultaneously, using the react-redux-firebase package to manage the application state and add listeners throughout the app",
         "Problems and Thought Process": "",
-        "Project Link": "https://invoicify-app.netlify.app",
+        "Project Link": "https://invoicify-client.herokuapp.com/",
         "GitHub Link": "https://github.com/udabasili/invoicify",
         "Screenshots or animated GIFs": "https://user-images.githubusercontent.com/33573587/159110238-ff564830-98ca-478a-bb7c-34f6df64fc98.png,https://user-images.githubusercontent.com/33573587/159110242-ce55bdf7-8d2b-43bb-8df1-9089f1903246.png,https://user-images.githubusercontent.com/33573587/159110245-89eed196-ad28-4dc5-a700-99bdfe9332a4.png"
     },
