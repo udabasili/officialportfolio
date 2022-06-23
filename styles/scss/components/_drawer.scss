@@ -1,0 +1,52 @@
+.drawer {
+	background-color: $color-background;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	overflow-y: auto;
+	z-index: 100;
+	left: -100vw;
+	transition: all 1s;
+
+	@include responsive(tab-port) {
+		height: 90vh;
+	}
+
+	&.open {
+		left: 0;
+	}
+
+	&__header {
+		background-color: black;
+		width: 100%;
+		height: 10vh;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		.icon {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			margin: 1rem;
+			background-color: red;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			svg {
+				font-size: 15px;
+				color: white;
+			}
+		}
+	}
+
+	&__content {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+}

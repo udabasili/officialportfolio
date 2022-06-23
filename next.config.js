@@ -1,7 +1,7 @@
-const { withPlaiceholder } = require("@plaiceholder/next");
+const { withPlaiceholder } = require('@plaiceholder/next');
 
 module.exports = withPlaiceholder({
-  images: {
-    domains: ["images.unsplash.com", 'user-images.githubusercontent.com'],
-  },
+	images: {
+		domains: ['images.unsplash.com', 'user-images.githubusercontent.com'],
+	},
 });

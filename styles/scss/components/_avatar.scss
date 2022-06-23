@@ -1,48 +1,48 @@
-.avatar {
-    position: relative;
+// .avatar {
+//     position: relative;
 
-    width: 30rem;
-    height: 30rem;
-    border-radius: 50%;
-    overflow: hidden;
-    justify-content: center;
-    grid-column: col-start 2 / col-start 4;
-    align-self: center;
-    display: flex;
-    align-items: center;
-    border: 20px solid $color-primary;
-    background-color: white;
+//     width: 30rem;
+//     height: 30rem;
+//     border-radius: 50%;
+//     overflow: hidden;
+//     justify-content: center;
+//     grid-column: col-start 2 / col-start 4;
+//     align-self: center;
+//     display: flex;
+//     align-items: center;
+//     border: 20px solid $color-primary;
+//     background-color: white;
 
-    @include responsive(tab-port){
-        grid-row: 1 / 2;
-        border-color: white;
-        width: 20rem ;
-        margin: 4rem;
-        height: 20rem;
-        justify-self: center;
-        grid-column: 1 / -1;
+//     @include responsive(tab-port){
+//         grid-row: 1 / 2;
+//         border-color: white;
+//         width: 20rem ;
+//         margin: 4rem;
+//         height: 20rem;
+//         justify-self: center;
+//         grid-column: 1 / -1;
 
-    }
-   
-    &__inner {
-        width: 20rem;
-        display: flex;
-        height: 20rem;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 10px solid $color-primary;
-        background-color: white;
+//     }
 
-        @include responsive(tab-port){
-            width: 20rem ;
-            height: 20rem;
-            border: unset;
-        }
-    }
+//     &__inner {
+//         width: 20rem;
+//         display: flex;
+//         height: 20rem;
+//         justify-content: center;
+//         align-items: center;
+//         border-radius: 50%;
+//         overflow: hidden;
+//         border: 10px solid $color-primary;
+//         background-color: white;
 
-    &__image {
-        
-    }
-}
+//         @include responsive(tab-port){
+//             width: 20rem ;
+//             height: 20rem;
+//             border: unset;
+//         }
+//     }
+
+//     &__image {
+
+//     }
+// }

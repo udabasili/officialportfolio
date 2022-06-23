@@ -1,180 +1,170 @@
 .navigation {
-    grid-column: full-start / full-end;
-    height: $nav-height;
-    background-color: $color-nav;
-    box-shadow: 1px 10px 55px 0px rgba(0,0,0,0.27);
-    display: flex;
-    z-index: 10;
-    align-items: center;
+	grid-column: 11 / 12;
+	height: 100%;
+	background-color: $color-nav;
+	box-shadow: 1px 10px 55px 0px rgba(0, 0, 0, 0.27);
+	display: flex;
+	z-index: 10;
+	align-items: center;
+	flex-direction: column;
 
-    .app-title {
-        flex-basis:  40%;
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: bold;
-        font-family: $bangers;
-        font-size: 3rem;
-    }
+	.app-title {
+		flex-basis: 40%;
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: bold;
+		font-family: $bangers;
+		font-size: 3rem;
+	}
 
-    &__list {
-        display: flex;
-        list-style: none;
-        align-items: center;
-        justify-content: space-around;
-        flex: 1;
+	&__list {
+		display: flex;
+		list-style: none;
+		align-items: center;
+		justify-content: space-around;
+		flex: 1;
+	}
 
-    }
+	&__item {
+		list-style: none;
+	}
 
-    &__item {
-        list-style: none;
-    }
+	&__link {
+		&:link,
+		&:visited {
+			text-decoration: none;
+			font-size: 1.4rem;
+			font-family: quicksand;
+			font-weight: bold;
+			display: flex;
+			padding: 1rem 2rem;
+			align-items: center;
+			color: black;
+		}
 
-    &__link {
-        &:link, &:visited {
-            text-decoration: none;
-            font-size: 1.4rem;
-            font-family: quicksand;
-            font-weight: bold;
-            display: flex;
-            padding: 1rem 2rem;
-            align-items: center;
-            color: black;
-        }
+		&:hover {
+		}
 
-        &:hover {
-            
-        }
+		&.active {
+			background-color: rgba($color-primary, 0.2);
+			color: $color-primary;
+			border-radius: 10px;
 
-        &.active {
-            background-color: rgba($color-primary, .2);
-            color:  $color-primary;
-            border-radius: 10px;
+			svg {
+				color: $color-primary;
+				margin-right: 1rem;
+			}
+		}
 
-            svg {
-                color: $color-primary;
-                margin-right: 1rem;
-            }
-        }
+		svg {
+			margin-right: 1rem;
+			font-size: 2rem;
+		}
+	}
 
-        svg {
-            margin-right: 1rem;
-            font-size: 2rem;
+	&__button {
+		display: none;
+	}
 
-        }
-    }
-
-    &__button {
-        display: none;
-    }
-
-    &__input {
-        display: none;
-    }
-
+	&__input {
+		display: none;
+	}
 }
 
 @include responsive(tab-port) {
-    .navigation {
-        padding-right: 10px;
-        z-index: 20;
-        justify-content: space-between;
+	.navigation {
+		padding-right: 10px;
+		z-index: 20;
+		justify-content: space-between;
 
-        .app-title {
-            display: flex;
-            justify-content: flex-start;
-            padding-left: 10px;
-            font-size: 2rem;
-        }
+		.app-title {
+			display: flex;
+			justify-content: flex-start;
+			padding-left: 10px;
+			font-size: 2rem;
+		}
 
-        &__button {
-            display: flex;
-            border: 2px solid black;
-            width: 40px;
-            height: 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
+		&__button {
+			display: flex;
+			border: 2px solid black;
+			width: 40px;
+			height: 30px;
+			border-radius: 5px;
+			cursor: pointer;
+			align-items: center;
+			justify-content: center;
 
-            &:hover {
-                background-color: rgba($color-primary, .5);
-            }
-        }
+			&:hover {
+				background-color: rgba($color-primary, 0.5);
+			}
+		}
 
+		&__icon {
+			&,
+			&::before,
+			&::after {
+				width: 20px;
+				background-color: black;
+				height: 4px;
+				position: relative;
+				display: block;
+			}
 
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+			}
 
-        &__icon {
-            
+			&::after {
+				top: 7px;
+			}
 
-            &,
-            &::before,
-            &::after {
-                width: 20px;
-                background-color: black;
-                height: 4px;
-                position: relative;
-                display: block;
-            }
+			&::before {
+				top: -7px;
+			}
+		}
 
+		&__input:checked ~ &__button &__icon {
+			background-color: transparent;
 
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-            }
+			&::after,
+			&::before {
+				top: 0;
+			}
 
-            &::after {
-                top: 7px;
-            }
+			&::after {
+				transform: rotate(45deg);
+			}
 
-            &::before {
-                top: -7px;
-            }
-        }
+			&::before {
+				transform: rotate(-45deg);
+			}
+		}
 
-        &__input:checked ~  &__button &__icon {
-                background-color: transparent;
+		&__list {
+			position: absolute;
+			flex-direction: column;
+			top: 10vh;
+			display: none;
+			width: 100%;
+			background-color: white;
 
-                &::after,
-                &::before{
-                    top: 0;
-                }
+			> * {
+				align-self: flex-start;
+				margin: 10px;
+			}
+		}
 
-                &::after {
-                    transform: rotate(45deg);
-                }
+		&__link {
+			font-size: 1.6rem;
+			&.active {
+				background-color: transparent;
+			}
+		}
 
-                &::before {
-                    transform: rotate(-45deg);
-                }
-            
-        }
-
-        &__list {
-            position: absolute;
-            flex-direction: column;
-            top: 10vh;
-            display: none;
-            width: 100%;
-            background-color: white;
-
-            > * {
-                align-self: flex-start;
-                margin: 10px; 
-            }
-        }
-
-        &__link {
-            font-size: 1.6rem;
-            &.active {
-                background-color: transparent;
-            }
-        }
-
-        &__input:checked ~  &__list {
-            display: flex;
-        
-        }
-    }
-
+		&__input:checked ~ &__list {
+			display: flex;
+		}
+	}
 }

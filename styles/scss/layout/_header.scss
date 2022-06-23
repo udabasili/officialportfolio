@@ -1,53 +1,103 @@
 .header {
-    display: grid;
-    grid-template-columns: inherit;
-    grid-column: full-start / full-end;
-    background-color: $color-background;
-    width: 100%;
-    height: 100vh - $nav-height;
-    position: relative;
+	display: grid;
+	grid-template-columns: inherit;
+	grid-column: full-start / full-end;
+	background-color: $color-background;
+	width: 100%;
+	height: 100vh;
+	position: relative;
 
-    &__background {
-        grid-column: full-start / full-end;
-        height: 100%;
-        background: linear-gradient( to right,  $color-primary 0 ,  $color-primary 30%, $color-background 30%);
+	@include responsive(tab-port) {
+		height: 90vh;
+	}
 
-        @include responsive(tab-port){
-            background:  $color-primary;
-        }
-    }
+	&__background {
+		grid-column: full-start / full-end;
+		height: 100%;
+		background: linear-gradient(100deg, $color-primary 0, $color-primary 30%, $color-background 30%);
 
-    &__content {
-        position: absolute;
-        display: grid;
-        grid-template-columns: inherit;
-        grid-column: full-start / full-end;
-        z-index: 10;
-        height: 100%;
-        left: 0;
-        align-items: center;
-        top: 0;
+		@include responsive(tab-port) {
+			background: $color-background;
+		}
+	}
 
-        @include responsive(tab-port){
-            flex-direction: column;
-            grid-template-rows: max-content min-content;
-        }
+	&__content {
+		position: absolute;
+		display: grid;
+		grid-template-columns: inherit;
+		grid-column: full-start / full-end;
+		height: 100%;
+		width: 80%;
+		left: 0;
+		justify-content: center;
+		align-items: center;
+		padding: 0 3rem;
+		top: 0;
 
+		@include responsive(tab-port) {
+			flex-direction: column;
+			display: flex;
+			width: 100%;
+			justify-content: unset;
+			padding: 0;
+		}
 
-        .text-box {
-            grid-column: col-start 5  / side-content-start;
+		@include responsive(mobile) {
+			justify-content: center;
+			padding-bottom: 4rem;
+		}
 
-            @include responsive(tab-port){
-                grid-column: 1 / -1;
-                grid-row: 2 / 3;
+		.avatar {
+			background-color: black;
+			width: 30vw;
+			height: 60vh;
+			position: relative;
 
-                .heading-1 {
-                    color: white;
-                }
-            }
+			@include responsive(tab-port) {
+				width: 35rem;
+				height: 35rem;
+				border-radius: 50%;
+				overflow: hidden;
+				justify-content: center;
+			}
 
-        }
-    }
+			@include responsive(mobile) {
+				width: 23rem;
+				height: 23rem;
+			}
+		}
 
-  
+		.text-box {
+			grid-column: col-start 5 / side-content-start;
+			align-items: flex-start;
+			display: flex;
+			flex-direction: column;
+
+			.button {
+				align-self: flex-start;
+
+				@include responsive(tab-port) {
+					align-self: center;
+				}
+			}
+
+			@include responsive(tab-port) {
+				width: 80%;
+				align-items: center;
+			}
+
+			.paragraph {
+				text-align: left;
+				margin: 3rem 0;
+
+				@include responsive(mobile) {
+					margin: 1.4rem 0;
+				}
+			}
+
+			@include responsive(tab-port) {
+				margin-top: 2rem;
+			}
+		}
+	}
 }
